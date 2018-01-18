@@ -1,0 +1,17 @@
+Package: chimpr
+Type: Package
+Title: 'Mailchimp' API Client
+Description: 'Mailchimp' API Client.
+Version: 0.0.1.9100
+Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
+    email = "myrmecocystus+r@gmail.com"))
+License: MIT + file LICENSE
+URL: https://github.com/sckott/chimpr
+BugReports: https://github.com/sckott/chimpr/issues
+Roxygen: list(markdown = TRUE)
+Imports:
+    crul (>= 0.3.8),
+    jsonlite (>= 1.1)
+Suggests:
+    testthat
+RoxygenNote: 6.0.1
