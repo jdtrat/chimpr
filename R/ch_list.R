@@ -8,7 +8,6 @@
 #' exclude. Reference parameters of sub-objects with dot notation.
 #' @template all
 #' @examples \dontrun{
-#' ch_list_('208fb01591')
 #' ch_list('208fb01591')
 #' ch_list('208fb01591', parse = FALSE)
 #' 
@@ -23,8 +22,6 @@ ch_list <- function(id, fields = NULL, exclude_fields = NULL,
   ch_parse(ch_list_(id, fields, exclude_fields, key, ...), parse)
 }
 
-#' @export
-#' @rdname ch_list
 ch_list_ <- function(id, fields = NULL, exclude_fields = NULL, 
     key = NULL, ...) {
 
