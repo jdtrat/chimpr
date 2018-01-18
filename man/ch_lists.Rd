@@ -5,20 +5,18 @@
 \alias{ch_lists_}
 \title{Get lists}
 \usage{
-ch_lists(id = NULL, fields = NULL, exclude_fields = NULL, count = NULL,
+ch_lists(fields = NULL, exclude_fields = NULL, count = NULL,
   offset = NULL, before_date_created = NULL, since_date_created = NULL,
   before_campaign_last_sent = NULL, since_campaign_last_sent = NULL,
   email = NULL, sort_field = NULL, sort_dir = NULL, key = NULL,
   parse = TRUE, ...)
 
-ch_lists_(id = NULL, fields = NULL, exclude_fields = NULL, count = NULL,
+ch_lists_(fields = NULL, exclude_fields = NULL, count = NULL,
   offset = NULL, before_date_created = NULL, since_date_created = NULL,
   before_campaign_last_sent = NULL, since_campaign_last_sent = NULL,
   email = NULL, sort_field = NULL, sort_dir = NULL, key = NULL, ...)
 }
 \arguments{
-\item{id}{(integer/numeric) a list id. optional}
-
 \item{fields}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 

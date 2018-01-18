@@ -1,7 +1,6 @@
 #' Get lists
 #'
 #' @export
-#' @param id (integer/numeric) a list id. optional
 #' @param fields (list/vector) A comma-separated list of fields to return. 
 #' Reference parameters of sub-objects with dot notation.
 #' @param exclude_fields (list/vector) A comma-separated list of fields to 
@@ -31,14 +30,14 @@
 #' ch_lists()
 #' ch_lists(parse = FALSE)
 #' }
-ch_lists <- function(id = NULL, fields = NULL, exclude_fields = NULL, 
+ch_lists <- function(fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,
     since_date_created = NULL, before_campaign_last_sent = NULL, 
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
     sort_dir = NULL, key = NULL, parse = TRUE, ...) {
 
   assert_is(parse, 'logical')
-  ch_parse(ch_lists_(id, fields, exclude_fields, count, offset, 
+  ch_parse(ch_lists_(fields, exclude_fields, count, offset, 
     before_date_created, since_date_created, before_campaign_last_sent, 
     since_campaign_last_sent, email, sort_field, sort_dir, key, 
     args, ...), parse)
@@ -46,15 +45,13 @@ ch_lists <- function(id = NULL, fields = NULL, exclude_fields = NULL,
 
 #' @export
 #' @rdname ch_lists
-ch_lists_ <- function(id = NULL, fields = NULL, exclude_fields = NULL, 
+ch_lists_ <- function(fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,
     since_date_created = NULL, before_campaign_last_sent = NULL, 
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
     sort_dir = NULL, key = NULL, ...) {
 
   assert_is(key, 'character')
-  # assert_is(page, c('integer', 'numeric'))
-  # assert_n(page, 1)
   args <- ct(list(fields = fields, exclude_fields = exclude_fields, 
     count = count, offset = offset, before_date_created = before_date_created,
     since_date_created = since_date_created, 

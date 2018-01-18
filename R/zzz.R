@@ -18,17 +18,24 @@ ch_GET <- function(path, key, query = list(), ...){
   temp <- cli$get(
     path = file.path("3.0", path), 
     query = query)
-  temp$raise_for_status()
+  err_catcher(temp)
+  #temp$raise_for_status()
   x <- temp$parse("UTF-8")
-  err_catcher(x)
   return(x)
 }
 
 err_catcher <- function(x) {
-  xx <- jsonlite::fromJSON(x)
-  if (any(vapply(c("message", "error"), function(z) z %in% names(xx),
-                 logical(1)))) {
-    stop(xx[[1]], call. = FALSE)
+  if (x$status_code > 201) {
+    if (x$response_headers$`content-type` == 
+      "application/problem+json; charset=utf-8") {
+
+      xx <- jsonlite::fromJSON(x$parse("UTF-8"))
+      xx <- paste0("\n  ", paste(names(xx), unname(xx), sep = ": ", 
+        collapse = "\n  "))
+      stop(xx, call. = FALSE)
+    } else {
+      x$raise_for_status()
+    }
   }
 }
 
