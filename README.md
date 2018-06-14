@@ -18,6 +18,24 @@ Keep this key private. You can pass the key in to each function via the
 `key` parameter, but it's better to store the key as an environment
 variable (`MAILCHIMP_KEY`).
 
+## Read only for now
+
+We're sticking to read only (i.e., `GET`) methods for now.
+
+## Package API
+
+The `R6` classes `ChmpCampaigns`, `ChmpList`, and `ChmpReports` have methods on them that 
+you can call for various API routes under each high level topic. Generally an id is 
+required (e.g., campaign id, list id, report id), but there are some methods that don't 
+require an id.
+
+* `chmp_ping` - ping 
+* `chmp_root` - API root
+* `chmp_lists`/`chmp_lists_` - get all lists
+* `ChmpCampaigns` - methods for campaigns
+* `ChmpList` - methods for individual lists
+* `ChmpReports` - methods for reports
+
 ## High vs. Low level package APIs
 
 __High level API__
@@ -53,11 +71,11 @@ all lists
 
 ```r
 # JSON
-ch_lists_()
+chmp_lists_()
 # parse to data.frame where possible
-ch_lists()
+chmp_lists()
 # parse to a list
-ch_lists(parse = FALSE)
+chmp_lists(parse = FALSE)
 ```
 
 ## Meta
@@ -65,6 +83,6 @@ ch_lists(parse = FALSE)
 * Please [report any issues or bugs](https://github.com/sckott/chimpr/issues).
 * License: MIT
 * Get citation information for `chimpr` in R doing `citation(package = 'chimpr')`
-* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [docs]: https://developer.mailchimp.com/documentation/mailchimp/
