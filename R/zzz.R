@@ -9,9 +9,9 @@ chimpr_ua <- function() {
   paste0(versions, collapse = " ")
 }
 
-ch_GET <- function(path, key, query = list(), ...){
+chmp_GET <- function(path, key, query = list(), ...){
   cli <- crul::HttpClient$new(
-    url = ch_base(),
+    url = chmp_base(),
     opts = c(list(useragent = chimpr_ua()), ...),
     auth = crul::auth(user = "anystring", pwd = check_key(key))
   )
@@ -39,7 +39,7 @@ err_catcher <- function(x) {
   }
 }
 
-ch_parse <- function(x, parse) {
+chmp_parse <- function(x, parse) {
   jsonlite::fromJSON(x, parse)
 }
 
@@ -52,7 +52,7 @@ check_key <- function(x){
   }
 }
 
-ch_base <- function() "https://us7.api.mailchimp.com"
+chmp_base <- function() "https://us7.api.mailchimp.com"
 
 space <- function(x) gsub("\\s", "%20", x)
 
@@ -71,4 +71,8 @@ assert_n <- function(x, n) {
       stop(deparse(substitute(x)), " must be length ", n, call. = FALSE)
     }
   }
+}
+
+`%||%` <- function(x, y) {
+  if (is.null(x) || length(x) == 0) y else x
 }

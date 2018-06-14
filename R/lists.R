@@ -26,26 +26,26 @@
 #' results. Possible Values: ASC, DESC
 #' @template all
 #' @examples \dontrun{
-#' ch_lists_()
-#' ch_lists()
-#' ch_lists(parse = FALSE)
+#' chmp_lists_()
+#' chmp_lists()
+#' chmp_lists(parse = FALSE)
 #' }
-ch_lists <- function(fields = NULL, exclude_fields = NULL, 
+chmp_lists <- function(fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,
     since_date_created = NULL, before_campaign_last_sent = NULL, 
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
     sort_dir = NULL, key = NULL, parse = TRUE, ...) {
 
   assert_is(parse, 'logical')
-  ch_parse(ch_lists_(fields, exclude_fields, count, offset, 
+  chmp_parse(chmp_lists_(fields, exclude_fields, count, offset, 
     before_date_created, since_date_created, before_campaign_last_sent, 
     since_campaign_last_sent, email, sort_field, sort_dir, key, 
     args, ...), parse)
 }
 
 #' @export
-#' @rdname ch_lists
-ch_lists_ <- function(fields = NULL, exclude_fields = NULL, 
+#' @rdname chmp_lists
+chmp_lists_ <- function(fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,
     since_date_created = NULL, before_campaign_last_sent = NULL, 
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
@@ -58,5 +58,5 @@ ch_lists_ <- function(fields = NULL, exclude_fields = NULL,
     before_campaign_last_sent = before_campaign_last_sent, 
     since_campaign_last_sent = since_campaign_last_sent, 
     email = email, sort_field = sort_field, sort_dir = sort_dir))
-  ch_GET("lists", key, query = args, ...)
+  chmp_GET("lists", key, query = args, ...)
 }

@@ -25,6 +25,10 @@ Keep this key private. You can pass the key in to each function via the
 `key` parameter, but it's better to store the key as an environment
 variable (`MAILCHIMP_KEY`).
 
+## Read only for now
+
+We're sticking to read only (i.e., `GET`) methods for now.
+
 ## High vs. Low level package APIs
 
 __High level API__
@@ -57,11 +61,11 @@ all lists
 
 ```{r eval=FALSE}
 # JSON
-ch_lists_()
+chmp_lists_()
 # parse to data.frame where possible
-ch_lists()
+chmp_lists()
 # parse to a list
-ch_lists(parse = FALSE)
+chmp_lists(parse = FALSE)
 ```
 
 ## Meta
