@@ -14,6 +14,6 @@ chimpr - Mailchimp R client
 }
 
 \author{
-Scott Chamberlain \email{myrmecocystus+r@gmail.com}
+Scott Chamberlain \email{sckott@protonmail.com}
 }
 \keyword{package}
