@@ -4,7 +4,7 @@ chimpr_ua <- function() {
   versions <- c(
     paste0("r-curl/", utils::packageVersion("curl")),
     paste0("crul/", utils::packageVersion("crul")),
-    sprintf("rOpenSci(chimpr/%s)", utils::packageVersion("chimpr"))
+    sprintf("chimpr/%s", utils::packageVersion("chimpr"))
   )
   paste0(versions, collapse = " ")
 }
@@ -13,7 +13,8 @@ chmp_GET <- function(dc = "us7", path, key, query = list(), ...){
   cli <- crul::HttpClient$new(
     url = chmp_base(dc),
     opts = c(list(useragent = chimpr_ua()), ...),
-    auth = crul::auth(user = "anystring", pwd = check_key(key))
+    auth = crul::auth(user = "anystring", pwd = key)
+    # auth = crul::auth(user = "anystring", pwd = check_key(key))
   )
   temp <- cli$get(
     path = file.path("3.0", path), 

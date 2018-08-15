@@ -5,6 +5,8 @@
 \alias{ChmpReports}
 \title{Reports class}
 \arguments{
+\item{conn}{a connection object. see \link{ChmpClient}}
+
 \item{id}{a report id. optional, but required for most methods}
 
 \item{fields}{(list/vector) A comma-separated list of fields to return.
@@ -24,12 +26,13 @@ not all routes are implemented thus far
 }
 \examples{
 \dontrun{
-(x <- ChmpReports$new())
+(conn <- ChmpClient$new())
+(x <- ChmpReports$new(conn))
 x$all()
 x$all(count = 2)
 x$all(count = 2, offset = 2)
 
-(x <- ChmpReports$new(id = "<id>"))
+(x <- ChmpReports$new(conn, id = "<id>"))
 x$info()
 x$info(parse = FALSE)
 x$info(fields = "clicks")

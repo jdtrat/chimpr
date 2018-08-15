@@ -5,6 +5,8 @@
 \alias{ChmpList}
 \title{Lists class}
 \arguments{
+\item{conn}{a connection object. see \link{ChmpClient}}
+
 \item{id}{a mailchimp list id. required}
 
 \item{fields}{(list/vector) A comma-separated list of fields to return.
@@ -34,7 +36,8 @@ not all routes are implemented thus far
 }
 \examples{
 \dontrun{
-(x <- ChmpList$new(id = "<id>"))
+(conn <- ChmpClient$new())
+(x <- ChmpList$new(conn, id = "<id>"))
 x$info()
 x$info(parse = FALSE)
 x$info(fields = "stats")

@@ -1,6 +1,7 @@
 #' Get lists
 #'
 #' @export
+#' @param conn a connection object. see [ChmpClient]
 #' @param fields (list/vector) A comma-separated list of fields to return. 
 #' Reference parameters of sub-objects with dot notation.
 #' @param exclude_fields (list/vector) A comma-separated list of fields to 
@@ -26,18 +27,19 @@
 #' results. Possible Values: ASC, DESC
 #' @template all
 #' @examples \dontrun{
-#' chmp_lists_()
-#' chmp_lists()
-#' chmp_lists(parse = FALSE)
+#' (x <- ChmpClient$new())
+#' chmp_lists_(x)
+#' chmp_lists(x)
+#' chmp_lists(x, parse = FALSE)
 #' }
-chmp_lists <- function(fields = NULL, exclude_fields = NULL, 
+chmp_lists <- function(conn, fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,
     since_date_created = NULL, before_campaign_last_sent = NULL, 
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
     sort_dir = NULL, key = NULL, parse = TRUE, ...) {
 
   assert_is(parse, 'logical')
-  chmp_parse(chmp_lists_(fields, exclude_fields, count, offset, 
+  chmp_parse(chmp_lists_(conn, fields, exclude_fields, count, offset, 
     before_date_created, since_date_created, before_campaign_last_sent, 
     since_campaign_last_sent, email, sort_field, sort_dir, key, 
     args, ...), parse)
@@ -45,7 +47,7 @@ chmp_lists <- function(fields = NULL, exclude_fields = NULL,
 
 #' @export
 #' @rdname chmp_lists
-chmp_lists_ <- function(fields = NULL, exclude_fields = NULL, 
+chmp_lists_ <- function(conn, fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,
     since_date_created = NULL, before_campaign_last_sent = NULL, 
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
@@ -58,5 +60,5 @@ chmp_lists_ <- function(fields = NULL, exclude_fields = NULL,
     before_campaign_last_sent = before_campaign_last_sent, 
     since_campaign_last_sent = since_campaign_last_sent, 
     email = email, sort_field = sort_field, sort_dir = sort_dir))
-  chmp_GET("lists", key, query = args, ...)
+  chmp_GET(conn$dc, "lists", conn$key %||% key, query = args, ...)
 }
