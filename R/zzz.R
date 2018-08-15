@@ -19,7 +19,6 @@ chmp_GET <- function(dc = "us7", path, key, query = list(), ...){
     path = file.path("3.0", path), 
     query = query)
   err_catcher(temp)
-  #temp$raise_for_status()
   x <- temp$parse("UTF-8")
   return(x)
 }

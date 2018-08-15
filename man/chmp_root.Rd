@@ -15,7 +15,7 @@ Reference parameters of sub-objects with dot notation.}
 exclude. Reference parameters of sub-objects with dot notation.}
 
 \item{key}{A Mailchimp API key. See
-\url{https://developer.mailchimp.com/documentation/mailchimp/} 
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
 to get a key}
 
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or

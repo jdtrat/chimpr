@@ -6,15 +6,16 @@
 \title{Get lists}
 \usage{
 chmp_lists(fields = NULL, exclude_fields = NULL, count = NULL,
-  offset = NULL, before_date_created = NULL, since_date_created = NULL,
-  before_campaign_last_sent = NULL, since_campaign_last_sent = NULL,
-  email = NULL, sort_field = NULL, sort_dir = NULL, key = NULL,
-  parse = TRUE, ...)
+  offset = NULL, before_date_created = NULL,
+  since_date_created = NULL, before_campaign_last_sent = NULL,
+  since_campaign_last_sent = NULL, email = NULL, sort_field = NULL,
+  sort_dir = NULL, key = NULL, parse = TRUE, ...)
 
 chmp_lists_(fields = NULL, exclude_fields = NULL, count = NULL,
-  offset = NULL, before_date_created = NULL, since_date_created = NULL,
-  before_campaign_last_sent = NULL, since_campaign_last_sent = NULL,
-  email = NULL, sort_field = NULL, sort_dir = NULL, key = NULL, ...)
+  offset = NULL, before_date_created = NULL,
+  since_date_created = NULL, before_campaign_last_sent = NULL,
+  since_campaign_last_sent = NULL, email = NULL, sort_field = NULL,
+  sort_dir = NULL, key = NULL, ...)
 }
 \arguments{
 \item{fields}{(list/vector) A comma-separated list of fields to return.
@@ -52,7 +53,7 @@ Possible Values: date_created}
 results. Possible Values: ASC, DESC}
 
 \item{key}{A Mailchimp API key. See
-\url{https://developer.mailchimp.com/documentation/mailchimp/} 
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
 to get a key}
 
 \item{parse}{(logical) Whether to parse to list (\code{FALSE}) or
