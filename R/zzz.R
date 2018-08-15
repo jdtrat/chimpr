@@ -9,9 +9,9 @@ chimpr_ua <- function() {
   paste0(versions, collapse = " ")
 }
 
-chmp_GET <- function(path, key, query = list(), ...){
+chmp_GET <- function(dc = "us7", path, key, query = list(), ...){
   cli <- crul::HttpClient$new(
-    url = chmp_base(),
+    url = chmp_base(dc),
     opts = c(list(useragent = chimpr_ua()), ...),
     auth = crul::auth(user = "anystring", pwd = check_key(key))
   )
@@ -27,11 +27,11 @@ chmp_GET <- function(path, key, query = list(), ...){
 err_catcher <- function(x) {
   if (x$status_code > 201) {
     if (x$response_headers$`content-type` == 
-      "application/problem+json; charset=utf-8") {
-
+        "application/problem+json; charset=utf-8") {
+      
       xx <- jsonlite::fromJSON(x$parse("UTF-8"))
       xx <- paste0("\n  ", paste(names(xx), unname(xx), sep = ": ", 
-        collapse = "\n  "))
+                                 collapse = "\n  "))
       stop(xx, call. = FALSE)
     } else {
       x$raise_for_status()
@@ -52,7 +52,7 @@ check_key <- function(x){
   }
 }
 
-chmp_base <- function() "https://us7.api.mailchimp.com"
+chmp_base <- function(x="us7") sprintf("https://%s.api.mailchimp.com", x)
 
 space <- function(x) gsub("\\s", "%20", x)
 
