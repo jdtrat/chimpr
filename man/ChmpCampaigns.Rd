@@ -5,6 +5,8 @@
 \alias{ChmpCampaigns}
 \title{Campaigns class}
 \arguments{
+\item{conn}{a connection object. see \link{ChmpClient}}
+
 \item{id}{a campgaign id. optional, but required for most methods}
 
 \item{fields}{(list/vector) A comma-separated list of fields to return.
@@ -24,12 +26,13 @@ not all routes are implemented thus far
 }
 \examples{
 \dontrun{
-(x <- ChmpCampaigns$new())
+(conn <- ChmpClient$new())
+(x <- ChmpCampaigns$new(conn))
 x$all()
 x$all(count = 2)
 x$all(count = 2, offset = 2)
 
-(x <- ChmpCampaigns$new(id = "<id>"))
+(x <- ChmpCampaigns$new(conn, id = "<id>")) 
 x$info()
 x$info(parse = FALSE)
 x$info(fields = "report_summary")

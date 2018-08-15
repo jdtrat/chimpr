@@ -1,6 +1,7 @@
 #' Reports class
 #'
 #' @export
+#' @param conn a connection object. see [ChmpClient]
 #' @param id a report id. optional, but required for most methods
 #' @param fields (list/vector) A comma-separated list of fields to return. 
 #' Reference parameters of sub-objects with dot notation.
@@ -11,12 +12,13 @@
 #' @details xxx
 #' @note not all routes are implemented thus far
 #' @examples \dontrun{
-#' (x <- ChmpReports$new())
+#' (conn <- ChmpClient$new())
+#' (x <- ChmpReports$new(conn))
 #' x$all()
 #' x$all(count = 2)
 #' x$all(count = 2, offset = 2)
 #' 
-#' (x <- ChmpReports$new(id = "<id>"))
+#' (x <- ChmpReports$new(conn, id = "<id>"))
 #' x$info()
 #' x$info(parse = FALSE)
 #' x$info(fields = "clicks")
@@ -38,9 +40,11 @@
 ChmpReports <- R6::R6Class(
   "ChmpReports",
   public = list(
+    conn = NULL,
     id = NULL,
 
-    initialize = function(id) {
+    initialize = function(conn, id) {
+      self$conn <- conn
       if (!missing(id)) {
         assert_is(id, "character")
         self$id <- id
@@ -175,7 +179,7 @@ ChmpReports <- R6::R6Class(
     get = function(path, args, parse, key, ...) {
       assert_is(parse, 'logical')
       assert_is(key, 'character')
-      chmp_parse(chmp_GET(path, key, query = args, ...), parse) 
+      chmp_parse(chmp_GET(self$conn$dc, path, self$conn$key %||% key, query = args, ...), parse) 
     }
   )
 )

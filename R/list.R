@@ -1,6 +1,7 @@
 #' Lists class
 #'
 #' @export
+#' @param conn a connection object. see [ChmpClient]
 #' @param id a mailchimp list id. required
 #' @param fields (list/vector) A comma-separated list of fields to return. 
 #' Reference parameters of sub-objects with dot notation.
@@ -18,7 +19,8 @@
 #' @details xxx
 #' @note not all routes are implemented thus far
 #' @examples \dontrun{
-#' (x <- ChmpList$new(id = "<id>"))
+#' (conn <- ChmpClient$new())
+#' (x <- ChmpList$new(conn, id = "<id>"))
 #' x$info()
 #' x$info(parse = FALSE)
 #' x$info(fields = "stats")
@@ -40,9 +42,11 @@
 ChmpList <- R6::R6Class(
   "ChmpLists",
   public = list(
+    conn = NULL,
     id = NULL,
 
-    initialize = function(id) {
+    initialize = function(conn, id) {
+      self$conn <- conn
       assert_is(id, "character")
       self$id <- id
     },
@@ -158,7 +162,7 @@ ChmpList <- R6::R6Class(
     get = function(path, args, parse, key, ...) {
       assert_is(parse, 'logical')
       assert_is(key, 'character')
-      chmp_parse(chmp_GET(path, key, query = args, ...), parse) 
+      chmp_parse(chmp_GET(self$conn$dc, path, self$conn$key %||% key, query = args, ...), parse) 
     }
   )
 )
