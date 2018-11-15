@@ -17,8 +17,20 @@ chmp_GET <- function(dc = "us7", path, key, query = list(), ...){
     # auth = crul::auth(user = "anystring", pwd = check_key(key))
   )
   temp <- cli$get(
-    path = file.path("3.0", path), 
+    path = file.path("3.0", path),
     query = query)
+  err_catcher(temp)
+  x <- temp$parse("UTF-8")
+  return(x)
+}
+
+chmp_POST <- function(dc = "us7", path, body = list(), ...){
+  cli <- crul::HttpClient$new(
+    url = chmp_base(dc),
+    opts = c(list(useragent = chimpr_ua()), ...)
+  )
+  temp <- cli$post(path = path, query = list(apikey = "00d646483bf026b2a0a079fb5708b380"), 
+    body = list(id = "d78520d99e"), encode = "json")
   err_catcher(temp)
   x <- temp$parse("UTF-8")
   return(x)
