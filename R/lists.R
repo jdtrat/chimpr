@@ -38,7 +38,7 @@ chmp_lists <- function(conn, fields = NULL, exclude_fields = NULL,
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
     sort_dir = NULL, key = NULL, parse = TRUE, ...) {
 
-  assert_is(parse, 'logical')
+  assert_is(parse, "logical")
   chmp_parse(chmp_lists_(conn, fields, exclude_fields, count, offset, 
     before_date_created, since_date_created, before_campaign_last_sent, 
     since_campaign_last_sent, email, sort_field, sort_dir, key, 
@@ -53,7 +53,7 @@ chmp_lists_ <- function(conn, fields = NULL, exclude_fields = NULL,
     since_campaign_last_sent = NULL, email = NULL, sort_field = NULL, 
     sort_dir = NULL, key = NULL, ...) {
 
-  assert_is(key, 'character')
+  assert_is(key, "character")
   args <- ct(list(fields = fields, exclude_fields = exclude_fields, 
     count = count, offset = offset, before_date_created = before_date_created,
     since_date_created = since_date_created, 
