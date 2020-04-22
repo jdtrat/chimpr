@@ -41,18 +41,7 @@ ChmpClient <- R6::R6Class(
     initialize = function(dc = "us7", key = NULL) {
       assert_is(dc, "character")
       self$dc <- dc
-
-      # if (!missing(key)) {
-      #   assert_is(key, "character")
-      #   Sys.setenv(MAILCHIMP_KEY = key)
-      # } else {
-      #   key <- Sys.getenv("MAILCHIMP_KEY", "")
-      #   if (key != "") {
-      #     message("using MAILCHIMP_KEY value previously set")
-      #   }
-      # }
       self$key <- check_key(key)
-      # self$key <- key
     },
 
     print = function(x, ...) {
