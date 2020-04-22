@@ -10,7 +10,7 @@ test_that("chmp_lists with vcr", {
     aa <- chmp_lists(x)
 
     expect_is(aa, "list")
-    expect_named(aa, c('lists', 'total_items', 'links'))
+    expect_named(aa, c('lists', 'total_items', 'constraints', 'links'))
     expect_is(aa$lists, "data.frame")
     expect_type(aa$total_items, "integer")
     expect_is(aa$links, "data.frame")
