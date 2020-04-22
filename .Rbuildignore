@@ -10,4 +10,5 @@ man-roxygen
 .github
 revdep
 notes.txt
-
+^notes.R$
+^Makefile$
