@@ -2,6 +2,7 @@ chimpr
 ======
 
 
+
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![cran checks](https://cranchecks.info/badges/worst/chimpr)](https://cranchecks.info/pkgs/chimpr)
 [![Build Status](https://travis-ci.com/sckott/chimpr.svg?branch=master)](https://travis-ci.com/sckott/chimpr)
@@ -14,7 +15,7 @@ chimpr
 
 ## Authentication
 
-Get a Mailchimp API key at <https://developer.mailchimp.com/documentation/mailchimp/>
+Get a Mailchimp API key at <https://mailchimp.com/developer/>
 
 Keep this key private. You can pass the key in to each function via the
 `key` parameter, but it's better to store the key as an environment
@@ -58,7 +59,7 @@ Development version
 
 
 ```r
-devtools::install_github("sckott/chimpr")
+remotes::install_github("sckott/chimpr")
 ```
 
 
@@ -85,7 +86,9 @@ chmp_lists(parse = FALSE)
 * Please [report any issues or bugs](https://github.com/sckott/chimpr/issues).
 * License: MIT
 * Get citation information for `chimpr` in R doing `citation(package = 'chimpr')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
-[docs]: https://developer.mailchimp.com/documentation/mailchimp/
-[apiref]: https://developer.mailchimp.com/documentation/mailchimp/reference/overview/
+[docs]: https://mailchimp.com/developer/
+[apiref]: https://mailchimp.com/developer/guides/get-started-with-mailchimp-api-3/
+
+[coc]: https://github.com/sckott/chimpr/blob/master/CODE_OF_CONDUCT.md

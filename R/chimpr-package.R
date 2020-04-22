@@ -1,7 +1,7 @@
-#' chimpr - Mailchimp R client
-#'
+#' @title chimpr
+#' @description Mailchimp R client
 #' @section Mailchimp API Docs:
-#' <https://developer.mailchimp.com/documentation/mailchimp/>
+#' <https://mailchimp.com/developer/>
 #'
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON

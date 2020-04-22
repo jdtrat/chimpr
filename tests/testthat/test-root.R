@@ -10,7 +10,7 @@ test_that("chmp_root with vcr", {
     aa <- x$root()
 
     expect_is(aa, "list")
-    expect_is(aa$'_links', 'data.frame')
+    expect_is(aa$links, 'data.frame')
     expect_equal(aa$account_name, "rOpenSci")
   })
 })

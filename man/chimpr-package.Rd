@@ -4,10 +4,13 @@
 \name{chimpr-package}
 \alias{chimpr-package}
 \alias{chimpr}
-\title{chimpr - Mailchimp R client}
+\title{chimpr}
+\description{
+Mailchimp R client
+}
 \section{Mailchimp API Docs}{
 
-\url{https://developer.mailchimp.com/documentation/mailchimp/}
+\url{https://mailchimp.com/developer/}
 }
 
 \author{
