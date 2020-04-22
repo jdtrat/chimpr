@@ -2,13 +2,13 @@ Package: chimpr
 Type: Package
 Title: 'Mailchimp' API Client
 Description: 'Mailchimp' API Client.
-Version: 0.0.5.9521
+Version: 0.0.6.93
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "sckott@protonmail.com"))
 License: MIT + file LICENSE
 URL: https://github.com/sckott/chimpr
 BugReports: https://github.com/sckott/chimpr/issues
-Roxygen: list(markdown = TRUE)
+Roxygen: list(markdown = TRUE, r6 = FALSE)
 Encoding: UTF-8
 Language: en-US
 Imports:
@@ -16,7 +16,7 @@ Imports:
     crul (>= 0.5.2),
     jsonlite (>= 1.1)
 Suggests:
-    roxygen2 (>= 6.1.1),
+    roxygen2 (>= 7.1.0),
     testthat,
     vcr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0

@@ -5,17 +5,40 @@
 \alias{chmp_lists_}
 \title{Get lists}
 \usage{
-chmp_lists(conn, fields = NULL, exclude_fields = NULL, count = NULL,
-  offset = NULL, before_date_created = NULL,
-  since_date_created = NULL, before_campaign_last_sent = NULL,
-  since_campaign_last_sent = NULL, email = NULL, sort_field = NULL,
-  sort_dir = NULL, key = NULL, parse = TRUE, ...)
+chmp_lists(
+  conn,
+  fields = NULL,
+  exclude_fields = NULL,
+  count = NULL,
+  offset = NULL,
+  before_date_created = NULL,
+  since_date_created = NULL,
+  before_campaign_last_sent = NULL,
+  since_campaign_last_sent = NULL,
+  email = NULL,
+  sort_field = NULL,
+  sort_dir = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)
 
-chmp_lists_(conn, fields = NULL, exclude_fields = NULL, count = NULL,
-  offset = NULL, before_date_created = NULL,
-  since_date_created = NULL, before_campaign_last_sent = NULL,
-  since_campaign_last_sent = NULL, email = NULL, sort_field = NULL,
-  sort_dir = NULL, key = NULL, ...)
+chmp_lists_(
+  conn,
+  fields = NULL,
+  exclude_fields = NULL,
+  count = NULL,
+  offset = NULL,
+  before_date_created = NULL,
+  since_date_created = NULL,
+  before_campaign_last_sent = NULL,
+  since_campaign_last_sent = NULL,
+  email = NULL,
+  sort_field = NULL,
+  sort_dir = NULL,
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{conn}{a connection object. see \link{ChmpClient}}
@@ -68,9 +91,9 @@ Get lists
 }
 \examples{
 \dontrun{
-(x <- ChmpClient$new())
-chmp_lists_(x)
-chmp_lists(x)
-chmp_lists(x, parse = FALSE)
+(conn <- ChmpClient$new())
+chmp_lists_(conn)
+chmp_lists(conn)
+chmp_lists(conn, parse = FALSE)
 }
 }

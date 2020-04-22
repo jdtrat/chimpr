@@ -5,9 +5,6 @@
 \alias{chimpr-package}
 \alias{chimpr}
 \title{chimpr - Mailchimp R client}
-\description{
-chimpr - Mailchimp R client
-}
 \section{Mailchimp API Docs}{
 
 \url{https://developer.mailchimp.com/documentation/mailchimp/}
