@@ -27,10 +27,10 @@
 #' results. Possible Values: ASC, DESC
 #' @template all
 #' @examples \dontrun{
-#' (x <- ChmpClient$new())
-#' chmp_lists_(x)
-#' chmp_lists(x)
-#' chmp_lists(x, parse = FALSE)
+#' (conn <- ChmpClient$new())
+#' chmp_lists_(conn)
+#' chmp_lists(conn)
+#' chmp_lists(conn, parse = FALSE)
 #' }
 chmp_lists <- function(conn, fields = NULL, exclude_fields = NULL, 
     count = NULL, offset = NULL, before_date_created = NULL,

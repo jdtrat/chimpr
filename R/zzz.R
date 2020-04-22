@@ -40,7 +40,11 @@ err_catcher <- function(x) {
 }
 
 chmp_parse <- function(x, parse) {
-  jsonlite::fromJSON(x, parse)
+  tmp <- jsonlite::fromJSON(x, parse)
+  if ("_links" %in% names(tmp)) {
+    names(tmp)[names(tmp) %in% "_links"] <- "links"
+  }
+  return (tmp)
 }
 
 check_key <- function(x){
