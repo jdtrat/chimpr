@@ -12,3 +12,4 @@ revdep
 notes.txt
 ^notes.R$
 ^Makefile$
+^ropensci_newsletter.R$

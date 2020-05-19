@@ -2,7 +2,7 @@ Package: chimpr
 Type: Package
 Title: 'Mailchimp' API Client
 Description: 'Mailchimp' API Client.
-Version: 0.0.6.93
+Version: 0.0.6.94
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "sckott@protonmail.com"))
 License: MIT + file LICENSE
