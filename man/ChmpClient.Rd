@@ -8,25 +8,6 @@ chimpr client
 
 chimpr client
 }
-\details{
-\strong{Methods}
-\itemize{
-\item \code{ping(...)}
-\itemize{
-\item ... Curl options passed to \link[crul:HttpClient]{crul::HttpClient}
-}
-\item \code{root(fields = NULL, exclude_fields = NULL, parse = TRUE)}
-\itemize{
-\item fields (list/vector) A comma-separated list of fields to return.
-Reference parameters of sub-objects with dot notation.
-\item exclude_fields (list/vector) A comma-separated list of fields to
-exclude. Reference parameters of sub-objects with dot notation.
-\item parse (logical) Whether to parse to list (\code{FALSE}) or
-data.frame (\code{TRUE}). Default: \code{TRUE}
-\item ... Curl options passed to \link[crul:HttpClient]{crul::HttpClient}
-}
-}
-}
 \examples{
 \dontrun{
 (x <- ChmpClient$new(dc = "us7", key = "<your key>"))
@@ -36,6 +17,15 @@ x$key
 x$ping()
 x$root()
 }
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{dc}}{(character) a data center}
+
+\item{\code{key}}{(character) an API key}
+}
+\if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -51,6 +41,7 @@ x$root()
 \if{html}{\out{<a id="method-new"></a>}}
 \if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
+Create a new \code{ChmpClient} object
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpClient$new(dc = "us7", key = NULL)}\if{html}{\out{</div>}}
 }
@@ -71,28 +62,65 @@ optional if already set as an environment variable}
 \if{html}{\out{<a id="method-print"></a>}}
 \if{latex}{\out{\hypertarget{method-print}{}}}
 \subsection{Method \code{print()}}{
+print method for \code{ChmpClient} objects
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpClient$print(x, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{self}
+
+\item{\code{...}}{ignored}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-ping"></a>}}
 \if{latex}{\out{\hypertarget{method-ping}{}}}
 \subsection{Method \code{ping()}}{
+A health check endpoint for the Mailchimp API
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpClient$ping(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Curl options passed to \link[crul:verb-GET]{crul::verb-GET}}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-root"></a>}}
 \if{latex}{\out{\hypertarget{method-root}{}}}
 \subsection{Method \code{root()}}{
+The API root resource links to all other resources
+available in the API. Calling the root directory also returns details
+about the Mailchimp user account.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpClient$root(fields = NULL, exclude_fields = NULL, parse = TRUE, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \link[crul:verb-GET]{crul::verb-GET}}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

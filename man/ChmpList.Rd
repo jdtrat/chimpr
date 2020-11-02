@@ -8,9 +8,6 @@ Lists class
 
 Lists class
 }
-\details{
-xxx
-}
 \note{
 not all routes are implemented thus far
 }
@@ -37,6 +34,15 @@ x$members()
 # x$member_notes("<id>")
 }
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{conn}}{(character) a connection object, see \link{ChmpClient}}
+
+\item{\code{id}}{(character) an id}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -61,6 +67,7 @@ x$members()
 \if{html}{\out{<a id="method-new"></a>}}
 \if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
+Create a new \code{ChmpList} object
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$new(conn, id)}\if{html}{\out{</div>}}
 }
@@ -70,24 +77,38 @@ x$members()
 \describe{
 \item{\code{conn}}{a connection object. see \link{ChmpClient}}
 
-\item{\code{id}}{a mailchimp list id. required}
+\item{\code{id}}{(character) a mailchimp list id. required}
 }
 \if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A new \code{ChmpList} object
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-print"></a>}}
 \if{latex}{\out{\hypertarget{method-print}{}}}
 \subsection{Method \code{print()}}{
+print method for \code{ChmpList} objects
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$print(x, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{self}
+
+\item{\code{...}}{ignored}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-info"></a>}}
 \if{latex}{\out{\hypertarget{method-info}{}}}
 \subsection{Method \code{info()}}{
+Get list info
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$info(
   fields = NULL,
@@ -106,6 +127,15 @@ Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -114,6 +144,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-activity"></a>}}
 \if{latex}{\out{\hypertarget{method-activity}{}}}
 \subsection{Method \code{activity()}}{
+List activity
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$activity(
   fields = NULL,
@@ -132,6 +163,15 @@ Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -140,6 +180,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-abuse_reports"></a>}}
 \if{latex}{\out{\hypertarget{method-abuse_reports}{}}}
 \subsection{Method \code{abuse_reports()}}{
+List abuse reports
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$abuse_reports(
   report = NULL,
@@ -154,11 +195,22 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{report}}{(character) a report id}
+
 \item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -167,6 +219,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-clients"></a>}}
 \if{latex}{\out{\hypertarget{method-clients}{}}}
 \subsection{Method \code{clients()}}{
+List clients
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$clients(
   fields = NULL,
@@ -185,6 +238,15 @@ Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -193,6 +255,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-growth_history"></a>}}
 \if{latex}{\out{\hypertarget{method-growth_history}{}}}
 \subsection{Method \code{growth_history()}}{
+Growth history
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$growth_history(
   month = NULL,
@@ -224,6 +287,15 @@ Default value is 10.}
 \item{\code{offset}}{(integer/numeric) The number of records from a collection
 to skip. Iterating over large collections with this parameter can be slow.
 Default value is 0.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -232,6 +304,7 @@ Default value is 0.}
 \if{html}{\out{<a id="method-interest_categories"></a>}}
 \if{latex}{\out{\hypertarget{method-interest_categories}{}}}
 \subsection{Method \code{interest_categories()}}{
+Interest categories
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$interest_categories(
   category_id = NULL,
@@ -249,6 +322,8 @@ Default value is 0.}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{category_id}}{(character) a category id}
+
 \item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 
@@ -261,6 +336,17 @@ Default value is 10.}
 \item{\code{offset}}{(integer/numeric) The number of records from a collection
 to skip. Iterating over large collections with this parameter can be slow.
 Default value is 0.}
+
+\item{\code{type}}{(character) a type}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -269,6 +355,7 @@ Default value is 0.}
 \if{html}{\out{<a id="method-locations"></a>}}
 \if{latex}{\out{\hypertarget{method-locations}{}}}
 \subsection{Method \code{locations()}}{
+Locations
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$locations(
   fields = NULL,
@@ -287,6 +374,15 @@ Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -295,6 +391,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-member"></a>}}
 \if{latex}{\out{\hypertarget{method-member}{}}}
 \subsection{Method \code{member()}}{
+Info for a specific list member
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$member(
   subscriber_hash,
@@ -309,11 +406,22 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{subscriber_hash}}{(character) a subscriber hash identifying a subscriber}
+
 \item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -322,6 +430,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-member_activity"></a>}}
 \if{latex}{\out{\hypertarget{method-member_activity}{}}}
 \subsection{Method \code{member_activity()}}{
+Activity for a specific list member
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$member_activity(
   subscriber_hash,
@@ -336,11 +445,22 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{subscriber_hash}}{(character) a subscriber hash identifying a subscriber}
+
 \item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -349,6 +469,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-member_goals"></a>}}
 \if{latex}{\out{\hypertarget{method-member_goals}{}}}
 \subsection{Method \code{member_goals()}}{
+Goals for a specific list member
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$member_goals(
   subscriber_hash,
@@ -363,11 +484,22 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{subscriber_hash}}{(character) a subscriber hash identifying a subscriber}
+
 \item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -376,6 +508,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-member_notes"></a>}}
 \if{latex}{\out{\hypertarget{method-member_notes}{}}}
 \subsection{Method \code{member_notes()}}{
+Notes for a specific list member
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$member_notes(
   subscriber_hash,
@@ -390,11 +523,22 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{subscriber_hash}}{(character) a subscriber hash identifying a subscriber}
+
 \item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.}
 
 \item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
@@ -403,6 +547,7 @@ exclude. Reference parameters of sub-objects with dot notation.}
 \if{html}{\out{<a id="method-members"></a>}}
 \if{latex}{\out{\hypertarget{method-members}{}}}
 \subsection{Method \code{members()}}{
+Members info
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ChmpList$members(
   fields = NULL,
@@ -441,6 +586,37 @@ Default value is 10.}
 \item{\code{offset}}{(integer/numeric) The number of records from a collection
 to skip. Iterating over large collections with this parameter can be slow.
 Default value is 0.}
+
+\item{\code{email_type}}{an email type}
+
+\item{\code{status}}{a status value}
+
+\item{\code{since_timestamp_opt}}{time stamp since}
+
+\item{\code{before_timestamp_opt}}{time stamp before}
+
+\item{\code{since_last_changed}}{since last changed}
+
+\item{\code{before_last_changed}}{before last changed}
+
+\item{\code{unique_email_id}}{a unique email id}
+
+\item{\code{vip_only}}{vip only?}
+
+\item{\code{interest_category_id}}{an interest category id}
+
+\item{\code{interest_ids}}{interest ids}
+
+\item{\code{interest_match}}{an interest match}
+
+\item{\code{key}}{A Mailchimp API key. See
+\url{https://developer.mailchimp.com/documentation/mailchimp/}
+to get a key}
+
+\item{\code{parse}}{(logical) Whether to parse to list (\code{FALSE}) or
+data.frame (\code{TRUE}). Default: \code{TRUE}}
+
+\item{\code{...}}{Curl options passed to \code{\link[crul]{HttpClient}}}
 }
 \if{html}{\out{</div>}}
 }
