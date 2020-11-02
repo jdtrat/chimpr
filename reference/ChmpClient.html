@@ -124,23 +124,14 @@ chimpr client" />
 
 
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="public-fields"><a class="anchor" href="#public-fields"></a>Public fields</h2>
 
-    <p><strong>Methods</strong></p><ul>
-<li><p><code>ping(...)</code></p><ul>
-<li><p>... Curl options passed to <a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>crul::HttpClient</a></p></li>
-</ul></li>
-<li><p><code>root(fields = NULL, exclude_fields = NULL, parse = TRUE)</code></p><ul>
-<li><p>fields (list/vector) A comma-separated list of fields to return.
-Reference parameters of sub-objects with dot notation.</p></li>
-<li><p>exclude_fields (list/vector) A comma-separated list of fields to
-exclude. Reference parameters of sub-objects with dot notation.</p></li>
-<li><p>parse (logical) Whether to parse to list (<code>FALSE</code>) or
-data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></li>
-<li><p>... Curl options passed to <a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>crul::HttpClient</a></p></li>
-</ul></li>
-</ul>
+    <p><div class="r6-fields"></p><dl>
+<dt><code>dc</code></dt><dd><p>(character) a data center</p></dd>
 
+<dt><code>key</code></dt><dd><p>(character) an API key</p></dd>
+
+</dl><p></div></p>
     <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
 
     
@@ -155,8 +146,7 @@ data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></li>
 </ul>
 <p><hr>
 <a id="method-new"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>new()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Create a new <code>ChmpClient</code> object</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpClient</span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span>dc <span class='op'>=</span> <span class='st'>"us7"</span>, key <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
@@ -170,22 +160,47 @@ optional if already set as an environment variable</p></dd>
 </dl><p></div></p>
 <p><hr>
 <a id="method-print"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>print method for <code>ChmpClient</code> objects</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpClient</span><span class='op'>$</span><span class='fu'>print</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
 
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>x</code></dt><dd><p>self</p></dd>
+
+<dt><code>...</code></dt><dd><p>ignored</p></dd>
+
+</dl><p></div></p>
 <p><hr>
 <a id="method-ping"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>ping()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>A health check endpoint for the Mailchimp API</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpClient</span><span class='op'>$</span><span class='fu'>ping</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
 
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>...</code></dt><dd><p>Curl options passed to <a href='https://docs.ropensci.org/crul/reference/verb-GET.html'>crul::verb-GET</a></p></dd>
+
+</dl><p></div></p>
 <p><hr>
 <a id="method-root"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>root()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>The API root resource links to all other resources
+available in the API. Calling the root directory also returns details
+about the Mailchimp user account.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpClient</span><span class='op'>$</span><span class='fu'>root</span><span class='op'>(</span>fields <span class='op'>=</span> <span class='cn'>NULL</span>, exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>, parse <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
 
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <a href='https://docs.ropensci.org/crul/reference/verb-GET.html'>crul::verb-GET</a></p></dd>
+
+</dl><p></div></p>
 <p><hr>
 <a id="method-clone"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clone()</code></h3>
 <p>The objects of this class are cloneable with this method.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>

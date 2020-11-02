@@ -124,12 +124,17 @@ Lists class" />
 
 
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>xxx</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>not all routes are implemented thus far</p>
+    <h2 class="hasAnchor" id="public-fields"><a class="anchor" href="#public-fields"></a>Public fields</h2>
+
+    <p><div class="r6-fields"></p><dl>
+<dt><code>conn</code></dt><dd><p>(character) a connection object, see <a href='ChmpClient.html'>ChmpClient</a></p></dd>
+
+<dt><code>id</code></dt><dd><p>(character) an id</p></dd>
+
+</dl><p></div></p>
     <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
 
     
@@ -154,27 +159,33 @@ Lists class" />
 </ul>
 <p><hr>
 <a id="method-new"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>new()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Create a new <code>ChmpList</code> object</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span><span class='va'>conn</span>, <span class='va'>id</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
 <dt><code>conn</code></dt><dd><p>a connection object. see <a href='ChmpClient.html'>ChmpClient</a></p></dd>
 
-<dt><code>id</code></dt><dd><p>a mailchimp list id. required</p></dd>
+<dt><code>id</code></dt><dd><p>(character) a mailchimp list id. required</p></dd>
+
+</dl><p></div></p>
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>A new <code>ChmpList</code> object</p>
+<p><hr>
+<a id="method-print"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code></h3>
+<p>print method for <code>ChmpList</code> objects</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>print</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>x</code></dt><dd><p>self</p></dd>
+
+<dt><code>...</code></dt><dd><p>ignored</p></dd>
 
 </dl><p></div></p>
 <p><hr>
-<a id="method-print"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
-<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>print</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
-
-<p><hr>
 <a id="method-info"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>info()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Get list info</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>info</span><span class='op'>(</span>
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
   exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -191,11 +202,19 @@ Reference parameters of sub-objects with dot notation.</p></dd>
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-activity"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>activity()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>List activity</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>activity</span><span class='op'>(</span>
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
   exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -212,11 +231,19 @@ Reference parameters of sub-objects with dot notation.</p></dd>
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-abuse_reports"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>abuse_reports()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>List abuse reports</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>abuse_reports</span><span class='op'>(</span>
   report <span class='op'>=</span> <span class='cn'>NULL</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -228,17 +255,27 @@ exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
+<dt><code>report</code></dt><dd><p>(character) a report id</p></dd>
+
 <dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.</p></dd>
 
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-clients"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clients()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>List clients</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>clients</span><span class='op'>(</span>
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
   exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -255,11 +292,19 @@ Reference parameters of sub-objects with dot notation.</p></dd>
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-growth_history"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>growth_history()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Growth history</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>growth_history</span><span class='op'>(</span>
   month <span class='op'>=</span> <span class='cn'>NULL</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -289,11 +334,19 @@ Default value is 10.</p></dd>
 to skip. Iterating over large collections with this parameter can be slow.
 Default value is 0.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-interest_categories"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>interest_categories()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Interest categories</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>interest_categories</span><span class='op'>(</span>
   category_id <span class='op'>=</span> <span class='cn'>NULL</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -308,6 +361,8 @@ Default value is 0.</p></dd>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
+<dt><code>category_id</code></dt><dd><p>(character) a category id</p></dd>
+
 <dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.</p></dd>
 
@@ -321,11 +376,21 @@ Default value is 10.</p></dd>
 to skip. Iterating over large collections with this parameter can be slow.
 Default value is 0.</p></dd>
 
+<dt><code>type</code></dt><dd><p>(character) a type</p></dd>
+
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-locations"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>locations()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Locations</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>locations</span><span class='op'>(</span>
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
   exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -342,11 +407,19 @@ Reference parameters of sub-objects with dot notation.</p></dd>
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-member"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Info for a specific list member</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member</span><span class='op'>(</span>
   <span class='va'>subscriber_hash</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -358,17 +431,27 @@ exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
+<dt><code>subscriber_hash</code></dt><dd><p>(character) a subscriber hash identifying a subscriber</p></dd>
+
 <dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.</p></dd>
 
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-member_activity"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member_activity()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Activity for a specific list member</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member_activity</span><span class='op'>(</span>
   <span class='va'>subscriber_hash</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -380,17 +463,27 @@ exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
+<dt><code>subscriber_hash</code></dt><dd><p>(character) a subscriber hash identifying a subscriber</p></dd>
+
 <dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.</p></dd>
 
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-member_goals"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member_goals()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Goals for a specific list member</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member_goals</span><span class='op'>(</span>
   <span class='va'>subscriber_hash</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -402,17 +495,27 @@ exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
+<dt><code>subscriber_hash</code></dt><dd><p>(character) a subscriber hash identifying a subscriber</p></dd>
+
 <dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.</p></dd>
 
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-member_notes"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member_notes()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Notes for a specific list member</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member_notes</span><span class='op'>(</span>
   <span class='va'>subscriber_hash</span>,
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -424,17 +527,27 @@ exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
+<dt><code>subscriber_hash</code></dt><dd><p>(character) a subscriber hash identifying a subscriber</p></dd>
+
 <dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
 Reference parameters of sub-objects with dot notation.</p></dd>
 
 <dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
 exclude. Reference parameters of sub-objects with dot notation.</p></dd>
 
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
+
 </dl><p></div></p>
 <p><hr>
 <a id="method-members"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>members()</code></h3>
-
-<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Members info</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>members</span><span class='op'>(</span>
   fields <span class='op'>=</span> <span class='cn'>NULL</span>,
   exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
@@ -470,6 +583,37 @@ Default value is 10.</p></dd>
 <dt><code>offset</code></dt><dd><p>(integer/numeric) The number of records from a collection
 to skip. Iterating over large collections with this parameter can be slow.
 Default value is 0.</p></dd>
+
+<dt><code>email_type</code></dt><dd><p>an email type</p></dd>
+
+<dt><code>status</code></dt><dd><p>a status value</p></dd>
+
+<dt><code>since_timestamp_opt</code></dt><dd><p>time stamp since</p></dd>
+
+<dt><code>before_timestamp_opt</code></dt><dd><p>time stamp before</p></dd>
+
+<dt><code>since_last_changed</code></dt><dd><p>since last changed</p></dd>
+
+<dt><code>before_last_changed</code></dt><dd><p>before last changed</p></dd>
+
+<dt><code>unique_email_id</code></dt><dd><p>a unique email id</p></dd>
+
+<dt><code>vip_only</code></dt><dd><p>vip only?</p></dd>
+
+<dt><code>interest_category_id</code></dt><dd><p>an interest category id</p></dd>
+
+<dt><code>interest_ids</code></dt><dd><p>interest ids</p></dd>
+
+<dt><code>interest_match</code></dt><dd><p>an interest match</p></dd>
+
+<dt><code>key</code></dt><dd><p>A Mailchimp API key. See
+<a href='https://developer.mailchimp.com/documentation/mailchimp/'>https://developer.mailchimp.com/documentation/mailchimp/</a>
+to get a key</p></dd>
+
+<dt><code>parse</code></dt><dd><p>(logical) Whether to parse to list (<code>FALSE</code>) or
+data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></dd>
+
+<dt><code>...</code></dt><dd><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></dd>
 
 </dl><p></div></p>
 <p><hr>
