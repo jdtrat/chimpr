@@ -40,7 +40,8 @@
 
 
 <meta property="og:title" content="Lists class — ChmpList" />
-<meta property="og:description" content="Lists class" />
+<meta property="og:description" content="Lists class
+Lists class" />
 
 
 
@@ -118,47 +119,10 @@
 
     <div class="ref-description">
     <p>Lists class</p>
+<p>Lists class</p>
     </div>
 
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>conn</th>
-      <td><p>a connection object. see <a href='ChmpClient.html'>ChmpClient</a></p></td>
-    </tr>
-    <tr>
-      <th>id</th>
-      <td><p>a mailchimp list id. required</p></td>
-    </tr>
-    <tr>
-      <th>fields</th>
-      <td><p>(list/vector) A comma-separated list of fields to return.
-Reference parameters of sub-objects with dot notation.</p></td>
-    </tr>
-    <tr>
-      <th>exclude_fields</th>
-      <td><p>(list/vector) A comma-separated list of fields to
-exclude. Reference parameters of sub-objects with dot notation.</p></td>
-    </tr>
-    <tr>
-      <th>month</th>
-      <td><p>(character) a year/month character string of the year/month
-you want. optional</p></td>
-    </tr>
-    <tr>
-      <th>count</th>
-      <td><p>(integer/numeric) The number of records to return.
-Default value is 10.</p></td>
-    </tr>
-    <tr>
-      <th>offset</th>
-      <td><p>(integer/numeric) The number of records from a collection
-to skip. Iterating over large collections with this parameter can be slow.
-Default value is 0.</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -166,6 +130,360 @@ Default value is 0.</p></td>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>not all routes are implemented thus far</p>
+    <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
+
+    
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Public methods</h3>
+
+<ul>
+<li><p><a href='#method-new'><code>ChmpList$new()</code></a></p></li>
+<li><p><a href='#method-print'><code>ChmpList$print()</code></a></p></li>
+<li><p><a href='#method-info'><code>ChmpList$info()</code></a></p></li>
+<li><p><a href='#method-activity'><code>ChmpList$activity()</code></a></p></li>
+<li><p><a href='#method-abuse_reports'><code>ChmpList$abuse_reports()</code></a></p></li>
+<li><p><a href='#method-clients'><code>ChmpList$clients()</code></a></p></li>
+<li><p><a href='#method-growth_history'><code>ChmpList$growth_history()</code></a></p></li>
+<li><p><a href='#method-interest_categories'><code>ChmpList$interest_categories()</code></a></p></li>
+<li><p><a href='#method-locations'><code>ChmpList$locations()</code></a></p></li>
+<li><p><a href='#method-member'><code>ChmpList$member()</code></a></p></li>
+<li><p><a href='#method-member_activity'><code>ChmpList$member_activity()</code></a></p></li>
+<li><p><a href='#method-member_goals'><code>ChmpList$member_goals()</code></a></p></li>
+<li><p><a href='#method-member_notes'><code>ChmpList$member_notes()</code></a></p></li>
+<li><p><a href='#method-members'><code>ChmpList$members()</code></a></p></li>
+<li><p><a href='#method-clone'><code>ChmpList$clone()</code></a></p></li>
+</ul>
+<p><hr>
+<a id="method-new"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>new()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span><span class='va'>conn</span>, <span class='va'>id</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>conn</code></dt><dd><p>a connection object. see <a href='ChmpClient.html'>ChmpClient</a></p></dd>
+
+<dt><code>id</code></dt><dd><p>a mailchimp list id. required</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-print"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>print</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
+
+<p><hr>
+<a id="method-info"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>info()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>info</span><span class='op'>(</span>
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-activity"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>activity()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>activity</span><span class='op'>(</span>
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-abuse_reports"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>abuse_reports()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>abuse_reports</span><span class='op'>(</span>
+  report <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-clients"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clients()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>clients</span><span class='op'>(</span>
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-growth_history"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>growth_history()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>growth_history</span><span class='op'>(</span>
+  month <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  count <span class='op'>=</span> <span class='fl'>10</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>month</code></dt><dd><p>(character) a year/month character string of the year/month
+you want. optional</p></dd>
+
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>count</code></dt><dd><p>(integer/numeric) The number of records to return.
+Default value is 10.</p></dd>
+
+<dt><code>offset</code></dt><dd><p>(integer/numeric) The number of records from a collection
+to skip. Iterating over large collections with this parameter can be slow.
+Default value is 0.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-interest_categories"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>interest_categories()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>interest_categories</span><span class='op'>(</span>
+  category_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  count <span class='op'>=</span> <span class='fl'>10</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  type <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>count</code></dt><dd><p>(integer/numeric) The number of records to return.
+Default value is 10.</p></dd>
+
+<dt><code>offset</code></dt><dd><p>(integer/numeric) The number of records from a collection
+to skip. Iterating over large collections with this parameter can be slow.
+Default value is 0.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-locations"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>locations()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>locations</span><span class='op'>(</span>
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-member"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member</span><span class='op'>(</span>
+  <span class='va'>subscriber_hash</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-member_activity"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member_activity()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member_activity</span><span class='op'>(</span>
+  <span class='va'>subscriber_hash</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-member_goals"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member_goals()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member_goals</span><span class='op'>(</span>
+  <span class='va'>subscriber_hash</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-member_notes"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>member_notes()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>member_notes</span><span class='op'>(</span>
+  <span class='va'>subscriber_hash</span>,
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-members"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>members()</code></h3>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>members</span><span class='op'>(</span>
+  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  count <span class='op'>=</span> <span class='fl'>10</span>,
+  offset <span class='op'>=</span> <span class='fl'>0</span>,
+  email_type <span class='op'>=</span> <span class='cn'>NULL</span>,
+  status <span class='op'>=</span> <span class='cn'>NULL</span>,
+  since_timestamp_opt <span class='op'>=</span> <span class='cn'>NULL</span>,
+  before_timestamp_opt <span class='op'>=</span> <span class='cn'>NULL</span>,
+  since_last_changed <span class='op'>=</span> <span class='cn'>NULL</span>,
+  before_last_changed <span class='op'>=</span> <span class='cn'>NULL</span>,
+  unique_email_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  vip_only <span class='op'>=</span> <span class='cn'>NULL</span>,
+  interest_category_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  interest_ids <span class='op'>=</span> <span class='cn'>NULL</span>,
+  interest_match <span class='op'>=</span> <span class='cn'>NULL</span>,
+  key <span class='op'>=</span> <span class='cn'>NULL</span>,
+  parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>exclude_fields</code></dt><dd><p>(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.</p></dd>
+
+<dt><code>count</code></dt><dd><p>(integer/numeric) The number of records to return.
+Default value is 10.</p></dd>
+
+<dt><code>offset</code></dt><dd><p>(integer/numeric) The number of records from a collection
+to skip. Iterating over large collections with this parameter can be slow.
+Default value is 0.</p></dd>
+
+</dl><p></div></p>
+<p><hr>
+<a id="method-clone"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clone()</code></h3>
+<p>The objects of this class are cloneable with this method.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>ChmpList</span><span class='op'>$</span><span class='fu'>clone</span><span class='op'>(</span>deep <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>deep</code></dt><dd><p>Whether to make a deep clone.</p></dd>
+
+</dl><p></div></p>
+
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
