@@ -3,12 +3,12 @@ chimpr
 
 
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![cran checks](https://cranchecks.info/badges/worst/chimpr)](https://cranchecks.info/pkgs/chimpr)
-[![Build Status](https://travis-ci.com/sckott/chimpr.svg?branch=master)](https://travis-ci.com/sckott/chimpr)
+[![R-check](https://github.com/sckott/chimpr/workflows/R-check/badge.svg)](https://github.com/sckott/chimpr/actions?query=workflow%3AR-check)
 [![codecov.io](https://codecov.io/github/sckott/chimpr/coverage.svg?branch=master)](https://codecov.io/github/sckott/chimpr?branch=master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/chimpr)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/chimpr)](https://cran.r-project.org/package=chimpr)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/chimpr)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/chimpr)](https://cran.r-project.org/package=chimpr)
 
 [Mailchimp API docs][docs]
 [API reference][apiref]
