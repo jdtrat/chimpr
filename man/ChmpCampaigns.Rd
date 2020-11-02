@@ -3,18 +3,9 @@
 \name{ChmpCampaigns}
 \alias{ChmpCampaigns}
 \title{Campaigns class}
-\arguments{
-\item{conn}{a connection object. see \link{ChmpClient}}
-
-\item{id}{a campgaign id. optional, but required for most methods}
-
-\item{fields}{(list/vector) A comma-separated list of fields to return.
-Reference parameters of sub-objects with dot notation.}
-
-\item{exclude_fields}{(list/vector) A comma-separated list of fields to
-exclude. Reference parameters of sub-objects with dot notation.}
-}
 \description{
+Campaigns class
+
 Campaigns class
 }
 \details{
@@ -38,5 +29,207 @@ x$info(fields = "report_summary")
 x$content()
 x$feedback()
 x$send_checklist()
+}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{ChmpCampaigns$new()}}
+\item \href{#method-print}{\code{ChmpCampaigns$print()}}
+\item \href{#method-all}{\code{ChmpCampaigns$all()}}
+\item \href{#method-info}{\code{ChmpCampaigns$info()}}
+\item \href{#method-content}{\code{ChmpCampaigns$content()}}
+\item \href{#method-feedback}{\code{ChmpCampaigns$feedback()}}
+\item \href{#method-send_checklist}{\code{ChmpCampaigns$send_checklist()}}
+\item \href{#method-clone}{\code{ChmpCampaigns$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$new(conn, id)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conn}}{a connection object. see \link{ChmpClient}}
+
+\item{\code{id}}{a campgaign id. optional, but required for most methods}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-print"></a>}}
+\if{latex}{\out{\hypertarget{method-print}{}}}
+\subsection{Method \code{print()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$print(x, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-all"></a>}}
+\if{latex}{\out{\hypertarget{method-all}{}}}
+\subsection{Method \code{all()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$all(
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  type = NULL,
+  status = NULL,
+  before_send_time = NULL,
+  since_send_time = NULL,
+  before_create_time = NULL,
+  since_create_time = NULL,
+  list_id = NULL,
+  folder_id = NULL,
+  sort_field = NULL,
+  sort_dir = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-info"></a>}}
+\if{latex}{\out{\hypertarget{method-info}{}}}
+\subsection{Method \code{info()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$info(
+  report = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-content"></a>}}
+\if{latex}{\out{\hypertarget{method-content}{}}}
+\subsection{Method \code{content()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$content(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-feedback"></a>}}
+\if{latex}{\out{\hypertarget{method-feedback}{}}}
+\subsection{Method \code{feedback()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$feedback(
+  feedback_id = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-send_checklist"></a>}}
+\if{latex}{\out{\hypertarget{method-send_checklist}{}}}
+\subsection{Method \code{send_checklist()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$send_checklist(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpCampaigns$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }

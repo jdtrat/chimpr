@@ -3,14 +3,9 @@
 \name{ChmpClient}
 \alias{ChmpClient}
 \title{chimpr client}
-\arguments{
-\item{dc}{(character) a data center. default: us7. required.}
-
-\item{key}{(character) API key. Can either pass in here,
-or set with \code{Sys.setenv()} or pass in to each function call.
-optional if already set as an environment variable}
-}
 \description{
+chimpr client
+
 chimpr client
 }
 \details{
@@ -40,5 +35,80 @@ x$dc
 x$key
 x$ping()
 x$root()
+}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{ChmpClient$new()}}
+\item \href{#method-print}{\code{ChmpClient$print()}}
+\item \href{#method-ping}{\code{ChmpClient$ping()}}
+\item \href{#method-root}{\code{ChmpClient$root()}}
+\item \href{#method-clone}{\code{ChmpClient$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpClient$new(dc = "us7", key = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dc}}{(character) a data center. default: us7. required.}
+
+\item{\code{key}}{(character) API key. Can either pass in here,
+or set with \code{Sys.setenv()} or pass in to each function call.
+optional if already set as an environment variable}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-print"></a>}}
+\if{latex}{\out{\hypertarget{method-print}{}}}
+\subsection{Method \code{print()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpClient$print(x, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ping"></a>}}
+\if{latex}{\out{\hypertarget{method-ping}{}}}
+\subsection{Method \code{ping()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpClient$ping(...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-root"></a>}}
+\if{latex}{\out{\hypertarget{method-root}{}}}
+\subsection{Method \code{root()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpClient$root(fields = NULL, exclude_fields = NULL, parse = TRUE, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }

@@ -3,18 +3,9 @@
 \name{ChmpReports}
 \alias{ChmpReports}
 \title{Reports class}
-\arguments{
-\item{conn}{a connection object. see \link{ChmpClient}}
-
-\item{id}{a report id. optional, but required for most methods}
-
-\item{fields}{(list/vector) A comma-separated list of fields to return.
-Reference parameters of sub-objects with dot notation.}
-
-\item{exclude_fields}{(list/vector) A comma-separated list of fields to
-exclude. Reference parameters of sub-objects with dot notation.}
-}
 \description{
+Reports class
+
 Reports class
 }
 \details{
@@ -49,5 +40,435 @@ x$locations()
 x$sent_to()
 x$sub_reports()
 x$unsubscribed()
+}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{ChmpReports$new()}}
+\item \href{#method-print}{\code{ChmpReports$print()}}
+\item \href{#method-all}{\code{ChmpReports$all()}}
+\item \href{#method-info}{\code{ChmpReports$info()}}
+\item \href{#method-abuse_reports}{\code{ChmpReports$abuse_reports()}}
+\item \href{#method-advice}{\code{ChmpReports$advice()}}
+\item \href{#method-open_details}{\code{ChmpReports$open_details()}}
+\item \href{#method-click_details}{\code{ChmpReports$click_details()}}
+\item \href{#method-domain_performance}{\code{ChmpReports$domain_performance()}}
+\item \href{#method-eepurl}{\code{ChmpReports$eepurl()}}
+\item \href{#method-email_activity}{\code{ChmpReports$email_activity()}}
+\item \href{#method-locations}{\code{ChmpReports$locations()}}
+\item \href{#method-sent_to}{\code{ChmpReports$sent_to()}}
+\item \href{#method-sub_reports}{\code{ChmpReports$sub_reports()}}
+\item \href{#method-unsubscribed}{\code{ChmpReports$unsubscribed()}}
+\item \href{#method-clone}{\code{ChmpReports$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$new(conn, id)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{conn}}{a connection object. see \link{ChmpClient}}
+
+\item{\code{id}}{a report id. optional, but required for most methods}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-print"></a>}}
+\if{latex}{\out{\hypertarget{method-print}{}}}
+\subsection{Method \code{print()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$print(x, ...)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-all"></a>}}
+\if{latex}{\out{\hypertarget{method-all}{}}}
+\subsection{Method \code{all()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$all(
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  type = NULL,
+  before_send_time = NULL,
+  since_send_time = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-info"></a>}}
+\if{latex}{\out{\hypertarget{method-info}{}}}
+\subsection{Method \code{info()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$info(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-abuse_reports"></a>}}
+\if{latex}{\out{\hypertarget{method-abuse_reports}{}}}
+\subsection{Method \code{abuse_reports()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$abuse_reports(
+  report = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-advice"></a>}}
+\if{latex}{\out{\hypertarget{method-advice}{}}}
+\subsection{Method \code{advice()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$advice(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-open_details"></a>}}
+\if{latex}{\out{\hypertarget{method-open_details}{}}}
+\subsection{Method \code{open_details()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$open_details(
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  since = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-click_details"></a>}}
+\if{latex}{\out{\hypertarget{method-click_details}{}}}
+\subsection{Method \code{click_details()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$click_details(
+  link_id = NULL,
+  members = FALSE,
+  subscriber_hash = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-domain_performance"></a>}}
+\if{latex}{\out{\hypertarget{method-domain_performance}{}}}
+\subsection{Method \code{domain_performance()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$domain_performance(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-eepurl"></a>}}
+\if{latex}{\out{\hypertarget{method-eepurl}{}}}
+\subsection{Method \code{eepurl()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$eepurl(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-email_activity"></a>}}
+\if{latex}{\out{\hypertarget{method-email_activity}{}}}
+\subsection{Method \code{email_activity()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$email_activity(
+  subscriber_hash = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  since = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-locations"></a>}}
+\if{latex}{\out{\hypertarget{method-locations}{}}}
+\subsection{Method \code{locations()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$locations(
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-sent_to"></a>}}
+\if{latex}{\out{\hypertarget{method-sent_to}{}}}
+\subsection{Method \code{sent_to()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$sent_to(
+  subscriber_hash = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-sub_reports"></a>}}
+\if{latex}{\out{\hypertarget{method-sub_reports}{}}}
+\subsection{Method \code{sub_reports()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$sub_reports(
+  fields = NULL,
+  exclude_fields = NULL,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-unsubscribed"></a>}}
+\if{latex}{\out{\hypertarget{method-unsubscribed}{}}}
+\subsection{Method \code{unsubscribed()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$unsubscribed(
+  subscriber_hash = NULL,
+  fields = NULL,
+  exclude_fields = NULL,
+  count = 10,
+  offset = 0,
+  key = NULL,
+  parse = TRUE,
+  ...
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fields}}{(list/vector) A comma-separated list of fields to return.
+Reference parameters of sub-objects with dot notation.}
+
+\item{\code{exclude_fields}}{(list/vector) A comma-separated list of fields to
+exclude. Reference parameters of sub-objects with dot notation.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{ChmpReports$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }

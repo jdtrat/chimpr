@@ -8,7 +8,7 @@ Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
 License: MIT + file LICENSE
 URL: https://github.com/sckott/chimpr
 BugReports: https://github.com/sckott/chimpr/issues
-Roxygen: list(markdown = TRUE, r6 = FALSE)
+Roxygen: list(markdown = TRUE, r6 = TRUE)
 Encoding: UTF-8
 Language: en-US
 Imports:
@@ -19,4 +19,4 @@ Suggests:
     roxygen2 (>= 7.1.0),
     testthat,
     vcr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
