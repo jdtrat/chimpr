@@ -17,20 +17,44 @@ chmp_GET <- function(dc = "us7", path, key, query = list(), ...){
     # auth = crul::auth(user = "anystring", pwd = check_key(key))
   )
   temp <- cli$get(
-    path = file.path("3.0", path), 
+    path = file.path("3.0", path),
     query = query)
   err_catcher(temp)
   x <- temp$parse("UTF-8")
   return(x)
 }
 
+chmp_POST <- function(dc = "us7", path, key, query = list(), body = NULL,
+                      disk = NULL, stream = NULL, encode = "json", ...) {
+
+  cli <- crul::HttpClient$new(
+    url = chmp_base(dc),
+    opts = c(list(useragent = chimpr_ua()), ...),
+    auth = crul::auth(user = "anystring", pwd = key)
+    # auth = crul::auth(user = "anystring", pwd = check_key(key))
+  )
+
+  temp <- cli$post(
+    path = file.path("3.0", path),
+    query = query,
+    body = body,
+    disk = disk,
+    stream = stream,
+    encode = encode)
+
+  err_catcher(temp)
+  x <- temp$parse("UTF-8")
+  return(x)
+}
+
+
 err_catcher <- function(x) {
   if (x$status_code > 201) {
-    if (x$response_headers$`content-type` == 
+    if (x$response_headers$`content-type` ==
         "application/problem+json; charset=utf-8") {
-      
+
       xx <- jsonlite::fromJSON(x$parse("UTF-8"))
-      xx <- paste0("\n  ", paste(names(xx), unname(xx), sep = ": ", 
+      xx <- paste0("\n  ", paste(names(xx), unname(xx), sep = ": ",
                                  collapse = "\n  "))
       stop(xx, call. = FALSE)
     } else {
