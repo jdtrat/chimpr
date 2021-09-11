@@ -8,13 +8,14 @@ test_that("chmp_lists with vcr", {
 
   vcr::use_cassette("chmp_lists", {
     aa <- chmp_lists(x)
-
-    expect_is(aa, "list")
-    expect_named(aa, c('lists', 'total_items', 'constraints', 'links'))
-    expect_is(aa$lists, "data.frame")
-    expect_type(aa$total_items, "integer")
-    expect_is(aa$links, "data.frame")
   })
+
+  expect_is(aa, "list")
+  expect_named(aa, c('lists', 'total_items', 'constraints', 'links'))
+  expect_is(aa$lists, "data.frame")
+  expect_type(aa$total_items, "integer")
+  expect_is(aa$links, "data.frame")
+
 })
 
 test_that("chmp_lists curl options work", {
@@ -29,16 +30,18 @@ test_that("chmp_post_lists with vcr", {
   skip_on_cran()
   skip_on_travis()
 
-  vcr::use_cassette("chmp_post_lists", {
+  rand_string <- function() {
+    paste(sample(c(letters, 1:9), 9), collapse = "")
+  }
 
-    rand_string <- function() {
-      paste(sample(c(letters, 1:9), 9), collapse = "")
-    }
+  vcr::use_cassette("chmp_post_lists", {
 
     aa <- chmp_post_list(x5,
                          list_id = Sys.getenv("MAILCHIMP_LISTID"),
                          email_address = paste0(rand_string(), "@", rand_string(), ".com"),
                          status = "subscribed")
+
+  })
 
     expect_is(aa, "list")
     expect_named(aa, c("id", "email_address", "unique_email_id",
@@ -55,6 +58,5 @@ test_that("chmp_post_lists with vcr", {
     expect_is(aa$email_address, "character")
     expect_is(aa$status, "character")
     expect_is(aa$location, "list")
-  })
 
-})
+    })
