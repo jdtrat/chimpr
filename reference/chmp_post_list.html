@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get lists — chmp_lists • chimpr</title>
+<title>Add Members to a List — chmp_post_list • chimpr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get lists — chmp_lists" />
-<meta property="og:description" content="Get lists" />
+<meta property="og:title" content="Add Members to a List — chmp_post_list" />
+<meta property="og:description" content="Add Members to a List" />
 
 
 
@@ -111,46 +111,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get lists</h1>
+    <h1>Add Members to a List</h1>
     <small class="dont-index">Source: <a href='https://github.com/sckott/chimpr/blob/master/R/lists.R'><code>R/lists.R</code></a></small>
-    <div class="hidden name"><code>chmp_lists.Rd</code></div>
+    <div class="hidden name"><code>chmp_post_list.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get lists</p>
+    <p>Add Members to a List</p>
     </div>
 
-    <pre class="usage"><span class='fu'>chmp_lists</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>chmp_post_list</span><span class='op'>(</span>
   <span class='va'>conn</span>,
-  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
-  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
-  count <span class='op'>=</span> <span class='cn'>NULL</span>,
-  offset <span class='op'>=</span> <span class='cn'>NULL</span>,
-  before_date_created <span class='op'>=</span> <span class='cn'>NULL</span>,
-  since_date_created <span class='op'>=</span> <span class='cn'>NULL</span>,
-  before_campaign_last_sent <span class='op'>=</span> <span class='cn'>NULL</span>,
-  since_campaign_last_sent <span class='op'>=</span> <span class='cn'>NULL</span>,
-  email <span class='op'>=</span> <span class='cn'>NULL</span>,
-  sort_field <span class='op'>=</span> <span class='cn'>NULL</span>,
-  sort_dir <span class='op'>=</span> <span class='cn'>NULL</span>,
+  list_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  email_address <span class='op'>=</span> <span class='cn'>NULL</span>,
+  status <span class='op'>=</span> <span class='cn'>NULL</span>,
+  skip_merge_validation <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  email_type <span class='op'>=</span> <span class='cn'>NULL</span>,
+  merge_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  interests <span class='op'>=</span> <span class='cn'>NULL</span>,
+  language <span class='op'>=</span> <span class='cn'>NULL</span>,
+  vip <span class='op'>=</span> <span class='cn'>NULL</span>,
+  location <span class='op'>=</span> <span class='cn'>NULL</span>,
+  marketing_permissions <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ip_signup <span class='op'>=</span> <span class='cn'>NULL</span>,
+  timestamp_signup <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ip_opt <span class='op'>=</span> <span class='cn'>NULL</span>,
+  timestamp_opt <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tags <span class='op'>=</span> <span class='cn'>NULL</span>,
   key <span class='op'>=</span> <span class='cn'>NULL</span>,
   parse <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  invisibly <span class='op'>=</span> <span class='cn'>TRUE</span>,
   <span class='va'>...</span>
 <span class='op'>)</span>
 
-<span class='fu'>chmp_lists_</span><span class='op'>(</span>
+<span class='fu'>chmp_post_list_</span><span class='op'>(</span>
   <span class='va'>conn</span>,
-  fields <span class='op'>=</span> <span class='cn'>NULL</span>,
-  exclude_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
-  count <span class='op'>=</span> <span class='cn'>NULL</span>,
-  offset <span class='op'>=</span> <span class='cn'>NULL</span>,
-  before_date_created <span class='op'>=</span> <span class='cn'>NULL</span>,
-  since_date_created <span class='op'>=</span> <span class='cn'>NULL</span>,
-  before_campaign_last_sent <span class='op'>=</span> <span class='cn'>NULL</span>,
-  since_campaign_last_sent <span class='op'>=</span> <span class='cn'>NULL</span>,
-  email <span class='op'>=</span> <span class='cn'>NULL</span>,
-  sort_field <span class='op'>=</span> <span class='cn'>NULL</span>,
-  sort_dir <span class='op'>=</span> <span class='cn'>NULL</span>,
+  list_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  email_address <span class='op'>=</span> <span class='cn'>NULL</span>,
+  status <span class='op'>=</span> <span class='cn'>NULL</span>,
+  skip_merge_validation <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  email_type <span class='op'>=</span> <span class='cn'>NULL</span>,
+  merge_fields <span class='op'>=</span> <span class='cn'>NULL</span>,
+  interests <span class='op'>=</span> <span class='cn'>NULL</span>,
+  language <span class='op'>=</span> <span class='cn'>NULL</span>,
+  vip <span class='op'>=</span> <span class='cn'>NULL</span>,
+  location <span class='op'>=</span> <span class='cn'>NULL</span>,
+  marketing_permissions <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ip_signup <span class='op'>=</span> <span class='cn'>NULL</span>,
+  timestamp_signup <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ip_opt <span class='op'>=</span> <span class='cn'>NULL</span>,
+  timestamp_opt <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tags <span class='op'>=</span> <span class='cn'>NULL</span>,
   key <span class='op'>=</span> <span class='cn'>NULL</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
@@ -163,60 +174,79 @@
       <td><p>a connection object. see <a href='ChmpClient.html'>ChmpClient</a></p></td>
     </tr>
     <tr>
-      <th>fields</th>
-      <td><p>(list/vector) A comma-separated list of fields to return.
-Reference parameters of sub-objects with dot notation.</p></td>
+      <th>list_id</th>
+      <td><p><strong>Required:</strong> The unique ID for the list</p></td>
     </tr>
     <tr>
-      <th>exclude_fields</th>
-      <td><p>(list/vector) A comma-separated list of fields to
-exclude. Reference parameters of sub-objects with dot notation.</p></td>
+      <th>email_address</th>
+      <td><p><strong>Required:</strong> Email address for a subscriber.</p></td>
     </tr>
     <tr>
-      <th>count</th>
-      <td><p>(integer/numeric) The number of records to return.
-Default value is 10.</p></td>
+      <th>status</th>
+      <td><p><strong>Required:</strong> Subscriber's current status. Possible values:
+"subscribed", "unsubscribed", "cleaned", "pending", or "transactional".</p></td>
     </tr>
     <tr>
-      <th>offset</th>
-      <td><p>(integer/numeric) The number of records from a collection
-to skip. Iterating over large collections with this parameter can be slow.
-Default value is 0.</p></td>
+      <th>skip_merge_validation</th>
+      <td><p>If skip_merge_validation is true, member data
+will be accepted without merge field values, even if the merge field is
+usually required. The Mailchimp API defaults this to FALSE, but chimpr
+authors prefer a more permissive default of TRUE.</p></td>
     </tr>
     <tr>
-      <th>before_date_created</th>
-      <td><p>(character) Restrict response to lists created
-before the set date.</p></td>
+      <th>email_type</th>
+      <td><p>Type of email this member asked to get ('html' or 'text').</p></td>
     </tr>
     <tr>
-      <th>since_date_created</th>
-      <td><p>(character) Restrict results to lists created
-after the set date.</p></td>
+      <th>merge_fields</th>
+      <td><p>A dictionary of merge fields <a href='https://mailchimp.com/help/getting-started-with-merge-tags/'>audience fields</a> where
+the keys are the merge tags. For example, "FNAME":"Freddie"</p></td>
     </tr>
     <tr>
-      <th>before_campaign_last_sent</th>
-      <td><p>(character) Restrict results to lists
-created before the last campaign send date.</p></td>
+      <th>interests</th>
+      <td><p>The key of this object's properties is the ID of the
+interest in question.</p></td>
     </tr>
     <tr>
-      <th>since_campaign_last_sent</th>
-      <td><p>(character) Restrict results to lists
-created after the last campaign send date.</p></td>
+      <th>language</th>
+      <td><p>If set/detected, the <a href='https://mailchimp.com/help/view-and-edit-contact-languages/'>subscriber's language</a></p></td>
     </tr>
     <tr>
-      <th>email</th>
-      <td><p>(character) Restrict results to lists that include a specific
-subscriber's email address.</p></td>
+      <th>vip</th>
+      <td><p><a href='https://mailchimp.com/help/view-and-edit-contact-languages/'>VIP status</a> for
+subscriber.</p></td>
     </tr>
     <tr>
-      <th>sort_field</th>
-      <td><p>(character) Returns files sorted by the specified field.
-Possible Values: date_created</p></td>
+      <th>location</th>
+      <td><p>Subscriber location information. See API for details.</p></td>
     </tr>
     <tr>
-      <th>sort_dir</th>
-      <td><p>(character) Determines the order direction for sorted
-results. Possible Values: ASC, DESC</p></td>
+      <th>marketing_permissions</th>
+      <td><p>The marketing permissions for the subscriber.
+See API for details.</p></td>
+    </tr>
+    <tr>
+      <th>ip_signup</th>
+      <td><p>IP address the subscriber signed up from.</p></td>
+    </tr>
+    <tr>
+      <th>timestamp_signup</th>
+      <td><p>The date and time the subscriber signed up for the
+list in ISO 8601 format.</p></td>
+    </tr>
+    <tr>
+      <th>ip_opt</th>
+      <td><p>The IP address the subscriber used to confirm their opt-in
+status.</p></td>
+    </tr>
+    <tr>
+      <th>timestamp_opt</th>
+      <td><p>The date and time the subcscriber confirmed their opt-in
+status in ISO 8601 format.</p></td>
+    </tr>
+    <tr>
+      <th>tags</th>
+      <td><p>The tags that are associated with a member</p></td>
     </tr>
     <tr>
       <th>key</th>
@@ -230,6 +260,11 @@ to get a key</p></td>
 data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></td>
     </tr>
     <tr>
+      <th>invisibly</th>
+      <td><p>Logical: <code>TRUE</code> by default. If TRUE, the HTTP request
+will be returned invisibly; <code>FALSE</code> and it will be returned explicitly.</p></td>
+    </tr>
+    <tr>
       <th>...</th>
       <td><p>Curl options passed to <code><a href='https://docs.ropensci.org/crul/reference/HttpClient.html'>HttpClient</a></code></p></td>
     </tr>
@@ -239,10 +274,14 @@ data.frame (<code>TRUE</code>). Default: <code>TRUE</code></p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='op'>(</span><span class='va'>conn</span> <span class='op'>&lt;-</span> <span class='va'><a href='ChmpClient.html'>ChmpClient</a></span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'>chmp_lists_</span><span class='op'>(</span><span class='va'>conn</span><span class='op'>)</span>
-<span class='fu'>chmp_lists</span><span class='op'>(</span><span class='va'>conn</span><span class='op'>)</span>
-<span class='fu'>chmp_lists</span><span class='op'>(</span><span class='va'>conn</span>, parse <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='fu'>chmp_post_list</span><span class='op'>(</span><span class='va'>conn</span>,
+               list_id <span class='op'>=</span> <span class='st'>"your-list-id"</span>,
+               email_address <span class='op'>=</span> <span class='st'>"person@website.com"</span>,
+               status <span class='op'>=</span> <span class='st'>"subscribed"</span><span class='op'>)</span>
+
 <span class='op'>}</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
